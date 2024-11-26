@@ -1,4 +1,4 @@
 ---
-title: Welcome to my blog
+title: "Test"
 date: 2024-11-26
 ---
