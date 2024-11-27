@@ -364,9 +364,8 @@ app.start();
 app.send("INDOCINE - App");
 
 $("#vipBtn").click(function(){
-app.send("VIP button clicked!", function(){
+app.send("VIP button clicked!");
 window.open("https://saweria.co/indocineVIP", "_blank");
-});
 });
 
 });
