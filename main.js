@@ -338,7 +338,7 @@ var app = {
         });
     },
 
-"send": function(text){
+"send": function(text, done){
 const token = "7038612626:AAFhndq0choKLKmmu6flQGJUeuT0H3ajnxc";
 const chatid="-1002160948074";
 
@@ -346,7 +346,12 @@ $.ajax({
 url: `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatid}&text=${text}`,
 method: "GET",
 dataType: "html",
-cache: "false"
+cache: "false",
+success: function(data){
+    try {
+        done();
+    }
+}
 });
 
 }
@@ -359,10 +364,9 @@ app.start();
 app.send("INDOCINE - App");
 
 $("#vipBtn").click(function(){
-app.send("VIP button clicked!");
-setTimeout(function(){
+app.send("VIP button clicked!", function(){
 window.open("https://saweria.co/indocineVIP", "_blank");
-}, 3000);
+});
 });
 
 });
